@@ -19,12 +19,12 @@ const scene = new THREE.Scene();
 
 // console.log(mesh.position.length());
 
-// // mesh.position.normalize(); // reduce the vector until its normaloze 1
+//  mesh.position.normalize(); // reduce the vector until its normaloze 1
 
-// // set all position at once:
+//  set all position at once:
 // mesh.position.set(0.7, -0.6, 1);
 
-// // Scale
+//  Scale
 // /*
 // it has 3 property to change:
 // x:
@@ -36,27 +36,27 @@ const scene = new THREE.Scene();
 // mesh.scale.z = 2;
 // mesh.scale.set(2, 0.5, 0.5); // set all at once
 
-// // Rotation
-// /*
+// Rotation
+//
 // it x,y ,z doesn't come from vector3 but Eular:
 //     when we change x,y,z properties , you can imagine putting a stick through
 //     your object's center in the axis's direction and then rotating that ogject on the stick
-// */
+//
 // mesh.rotation.y = 3.14159; // y = | stick through bottom to top , so rotate side wise
 // mesh.rotation.y = Math.PI; // for half rotation we use pi 3.14159 or Math.PI
-// // for full rotation double the value of PI
+//  for full rotation double the value of PI
 // mesh.rotation.y = Math.PI / 2; // quarter of roatation
 
-// /*
-// rotating through differetn axis can result unintended consiquences :
-//     since we selected y at the bigenning , then changed x , the position of y chaged .
-//     now when we rotate y again we will see different result. its called gimble lock
-//     to avoid this we use some sort of order of axis to the rotation
-// */
+/*
+ rotating through differetn axis can result unintended consiquences :
+     since we selected y at the bigenning , then changed x , the position of y chaged .
+     now when we rotate y again we will see different result. its called gimble lock
+   to avoid this we use some sort of order of axis to the rotation
+ */
 // mesh.rotation.reorder("YXZ");
 // mesh.rotation.x = Math.PI * 0.25;
 // mesh.rotation.y = Math.PI * 0.25;
-// // object rotation == quartanian
+//  object rotation == quartanian
 
 const group = new THREE.Group(); // adding things to group so we can move all the things together
 scene.add(group);
@@ -87,7 +87,7 @@ group.scale.y = 2;
 group.rotation.y = 1;
 
 // axis Helper
-// positioning in air is hard to we have axishelper to identify each axis
+// positioning in air is hard so, we have axishelper to identify each axis
 const axisHelper = new THREE.AxesHelper(2); // peram: length of each axis
 scene.add(axisHelper);
 /**
